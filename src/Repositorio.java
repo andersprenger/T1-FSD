@@ -19,4 +19,8 @@ public class Repositorio {
     public void carregaDados(){
         registros = fonteDados.carregarDados();
     }
+
+    public List<RegistroDoTempo> getRegistros(){
+        return registros;
+    }
 }

@@ -10,7 +10,10 @@ import java.util.Scanner;
 
 public class Consultas {
     private List<RegistroDoTempo> registros;
-    private String nArq;
+
+    public Consultas(List<RegistroDoTempo> registros){
+        this.registros = registros;
+    }
 
     public List<String> datasEmQueChouveuMaisDe(double milimetros){
         return registros
