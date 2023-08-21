@@ -4,7 +4,7 @@ public class App {
         repositorio.carregaDados();
 
         // passa os registros extraídos do arquivo (através da classe FonteDados) deixado no objeto repositorio
-        Consultas consulta = new Consultas(repositorio.getRegistros());
+        Consultas consulta = new Consultas(repositorio);
 
         System.out.println("Dia em que mais choveu no ano de 1980: ");
         System.out.println(consulta.diaQueMaisChoveuNoAno(1980));

@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Consultas {
-    private List<RegistroDoTempo> registros;
+    private IRepositorio repositorio;
 
-    public Consultas(List<RegistroDoTempo> registros){
-        this.registros = registros;
+    public Consultas(IRepositorio repositorio){
+        this.repositorio = repositorio;
     }
 
     public List<String> datasEmQueChouveuMaisDe(double milimetros){
-        return registros
+        return repositorio.getRegistros()
             .stream()
             .filter(r->r.getPrecipitacao() > milimetros)
             .map(r->r.getDia()+"/"+r.getMes()+"/"+r.getAno())
@@ -24,7 +24,7 @@ public class Consultas {
     }
 
     public String diaQueMaisChoveuNoAno(int ano){
-        RegistroDoTempo registro = registros
+        RegistroDoTempo registro = repositorio.getRegistros()
         .stream()
         .filter(reg->reg.getAno() == ano)
         .max(Comparator.comparing(RegistroDoTempo::getPrecipitacao))
