@@ -1,3 +1,5 @@
+import java.util.function.Predicate;
+
 public class App {
     public static void main(String[] args) {
         IRepositorio repositorio = new Repositorio("poa_temps.txt"); // repository
@@ -11,5 +13,9 @@ public class App {
         System.out.println("Datas em que choveu mais de 90 milimetros");
         consulta.datasEmQueChouveuMaisDe(90)
             .forEach(System.out::println);
+
+        Predicate<RegistroDoTempo> predicate = registro -> registro.getTemperaturaMedia() > 25;
+        consulta.alteraConsultaPadrao(predicate);
+        consulta.diasEmQue().forEach(System.out::println);
     }
 }
