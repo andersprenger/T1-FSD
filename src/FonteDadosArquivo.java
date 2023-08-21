@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FonteDadosArquivo implements FonteDados {
+public class FonteDadosArquivo implements IFonteDados {
     private String nomeArquivo;
 
     public FonteDadosArquivo(String nomeArquivo){
