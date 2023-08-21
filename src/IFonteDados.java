@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface FonteDados{
+public interface IFonteDados {
     List<RegistroDoTempo> carregarDados();
 }
