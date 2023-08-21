@@ -14,6 +14,7 @@ public class App {
         consulta.datasEmQueChouveuMaisDe(90)
             .forEach(System.out::println);
 
+        System.out.println("Datas em que a temperatura média foi maior que 25 graus");
         Predicate<RegistroDoTempo> predicate = registro -> registro.getTemperaturaMedia() > 25;
         consulta.alteraConsultaPadrao(predicate);
         consulta.diasEmQue().forEach(System.out::println);
